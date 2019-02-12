@@ -1,0 +1,32 @@
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+mybatis-plus:
+  typeAliasesPackage: com.zykjct.order.entity
+  global-config:
+    db-config:
+      id-type: id_worker
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/zykjct?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT
+    username: root
+    password: root
+    filters: wall,mergeStat
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: zykjct-order-remote
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      percentage: 1
+
+

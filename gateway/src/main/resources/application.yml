@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: zykjct-gateway-remote
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      percentage: 1
+jwt:
+  secret: LLNc5XMsKEgYw2v5
+  expiration: 82800
+
+
+zuul:
+  routes:
+    user:
+      path: /user/**
+      serviceId: zykjct-user-remote
+    order:
+      path: /order/**
+      serviceId: zykjct-order-remote
+
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000

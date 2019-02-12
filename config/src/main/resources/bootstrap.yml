@@ -1,0 +1,21 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: zykjct-config-remote
+  cloud:
+    config:
+      server:
+        git:
+          uri:
+          username:
+          passphrase:
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
