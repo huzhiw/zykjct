@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import static com.zykjct.kernel.core.constants.AopSortConstants.DEFAULT_EXCEPTION_HANDLER_SORT;
-
 /**
  * @description:  全局的的异常拦截器（拦截所有的控制器）（带有@RequestMapping注解的方法上都会拦截）
  * @author: huzhiwen
@@ -21,7 +19,7 @@ import static com.zykjct.kernel.core.constants.AopSortConstants.DEFAULT_EXCEPTIO
 
 @ControllerAdvice
 @Slf4j
-@Order(DEFAULT_EXCEPTION_HANDLER_SORT)
+@Order(200)
 public class DefaultExceptionHandler {
     /**
      * 拦截各个服务的具体异常
