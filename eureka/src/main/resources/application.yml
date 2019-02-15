@@ -12,7 +12,4 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
   server:
-    enable-self-preservation: false
-    responseCacheUpdateIntervalMs: 3000
-    responseCacheAutoExpirationInSeconds: 180
-    eviction-interval-timer-in-ms: 3000
+    enable-self-preservation: false  #一个服务长时间没有发送心跳，eureka也不会将其删除
