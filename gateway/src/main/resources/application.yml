@@ -19,8 +19,7 @@ spring:
       percentage: 1
 jwt:
   secret: LLNc5XMsKEgYw2v5
-  expiration: 82800
-
+  expiration: 86400
 
 zuul:
   routes:
@@ -30,6 +29,10 @@ zuul:
     order:
       path: /order/**
       serviceId: zykjct-order-remote
+  ribbon:
+    eager-load:
+      enabled: true
+  ignored-services: "*"
 
 ribbon:
   ReadTimeout: 10000

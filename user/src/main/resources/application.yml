@@ -33,7 +33,7 @@ spring:
 
 jwt:
   secret: LLNc5XMsKEgYw2v5
-  expiration: 82800
+  expiration: 86400
 
 hystrix:
   command:
@@ -41,11 +41,11 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 3000  #超时降级
+            timeoutInMilliseconds: 5000  #超时降级
       circuitBreaker:
         enabled: true
         requestVolumeThreshold: 10  #最小请求数
-        sleepWindowInMilliseconds: 10000  #设置在熔断器打开后，拒绝请求到再次尝试请求并决定熔断器是否继续的时间
+        sleepWindowInMilliseconds: 30000  #设置在熔断器打开后，拒绝请求到再次尝试请求并决定熔断器是否继续的时间
         errorThresholdPercentage: 50  #错误率
 feign:
   hystrix:
