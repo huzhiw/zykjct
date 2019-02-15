@@ -11,5 +11,3 @@ eureka:
       defaultZone: http://localhost:8761/eureka
     register-with-eureka: false
     fetch-registry: false
-  server:
-    enable-self-preservation: false  #一个服务长时间没有发送心跳，eureka也不会将其删除
