@@ -1,6 +1,7 @@
 package com.zykjct.order.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zykjct.kernel.core.page.PageFactory;
 import com.zykjct.kernel.core.page.PageInfo;
@@ -34,8 +35,7 @@ public class OrderController {
     public ResponseData queryOrder(@ApiParam(value = "订单号",required = true) @RequestParam("tradeNo") String tradeNo) {
         QueryWrapper<Order> wrapper = new QueryWrapper<>();
         wrapper.eq("tradeNo", tradeNo);
-        Page<Order> page = new PageFactory().defaultPage();
-        page = (Page<Order>) orderService.page(page,wrapper);
+        IPage<Order> page = orderService.page(new PageFactory().defaultPage(),wrapper);
         PageInfo pageInfo = new PageInfo(page);
         return ResponseData.success(pageInfo);
     }

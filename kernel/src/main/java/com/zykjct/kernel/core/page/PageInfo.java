@@ -1,5 +1,6 @@
 package com.zykjct.kernel.core.page;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class PageInfo<T> {
     // 总数
     private long total;
 
-    public PageInfo(Page<T> page) {
+    public PageInfo(IPage<T> page) {
         this.rows = page.getRecords();
         this.total = page.getTotal();
     }

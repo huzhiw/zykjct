@@ -35,7 +35,6 @@
         <fastjson.version>1.2.54</fastjson.version>
         <druid.version>1.1.12</druid.version>
         <jwt.version>0.9.1</jwt.version>
-        <spring.boot.admin>2.1.1</spring.boot.admin>
         <lombok.versin>1.18.4</lombok.versin>
         <mysql-connector-java.version>8.0.11</mysql-connector-java.version>
         <apache.commons.version>3.4</apache.commons.version>

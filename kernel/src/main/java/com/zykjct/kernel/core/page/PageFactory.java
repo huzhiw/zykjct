@@ -29,7 +29,7 @@ public class PageFactory {
     /**
      * 第几页的param名称
      */
-    private static final String PAGE_NO_PARAM_NAME = "pageNo";
+    private static final String PAGE_NO_PARAM_NAME = "page";
 
     /**
      * 升序还是降序的param名称
